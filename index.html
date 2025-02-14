@@ -11,7 +11,9 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="logo.png" alt="ÖZMER Halı Yıkama Logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="ÖZMER Halı Yıkama Logo">
+                </a>
             </div>
             <div class="menu-toggle">
                 <span></span>
@@ -23,6 +25,7 @@
                 <li><a href="hizmetler.html">Hizmetlerimiz</a></li>
                 <li><a href="fiyatlar.html">Fiyatlar</a></li>
                 <li><a href="kampanyalar.html">Kampanyalar</a></li>
+                <li><a href="hizmet-bolgeleri.html">Hizmet Bölgeleri</a></li>
                 <li><a href="yorumlar.html">Müşteri Yorumları</a></li>
                 <li><a href="randevu.html">Randevu Al</a></li>
                 <li><a href="hakkimizda.html">Hakkımızda</a></li>
@@ -39,12 +42,59 @@
         </div>
     </section>
 
+    <section class="featured-services">
+        <h2>Öne Çıkan Hizmetlerimiz</h2>
+        <div class="service-grid">
+            <a href="hizmetler/hali-yikama.html" class="service-item">
+                <i class="fas fa-carpet"></i>
+                <h3>Halı Yıkama</h3>
+                <p>Profesyonel ekipmanlarla derinlemesine temizlik</p>
+            </a>
+            <a href="hizmetler/koltuk-yikama.html" class="service-item">
+                <i class="fas fa-couch"></i>
+                <h3>Koltuk Yıkama</h3>
+                <p>Leke çıkarma ve derinlemesine temizlik</p>
+            </a>
+            <a href="hizmetler/perde-yikama.html" class="service-item">
+                <i class="fas fa-wind"></i>
+                <h3>Perde Yıkama</h3>
+                <p>Özel yıkama teknikleriyle perde temizliği</p>
+            </a>
+        </div>
+    </section>
+
+    <section class="why-us">
+        <h2>Neden Bizi Tercih Etmelisiniz?</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <i class="fas fa-clock"></i>
+                <h3>Hızlı Servis</h3>
+                <p>Aynı gün teslimat imkanı</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Garantili Hizmet</h3>
+                <p>%100 müşteri memnuniyeti</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-truck"></i>
+                <h3>Ücretsiz Servis</h3>
+                <p>Adresinizden teslim alıp, adresinize teslim ediyoruz</p>
+            </div>
+        </div>
+    </section>
+
     <section class="quick-contact">
         <div class="contact-info">
             <h3>Hızlı İletişim</h3>
             <p><i class="fas fa-phone"></i> (0212) 321 54 62</p>
             <p><i class="fas fa-mobile-alt"></i> (0532) 241 89 69</p>
             <p><i class="fas fa-map-marker-alt"></i> Örnektepe Mah. Kanarya Sk. No:71 BEYOĞLU/İSTANBUL</p>
+            <div class="social-media">
+                <a href="https://instagram.com/ozmerhaliyikama" target="_blank" class="instagram-btn">
+                    <i class="fab fa-instagram"></i> Instagram'da Bizi Takip Edin
+                </a>
+            </div>
         </div>
     </section>
 
@@ -53,7 +103,6 @@
     </footer>
 
     <script>
-        // Mobil menü için JavaScript
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             document.querySelector('.nav-links').classList.toggle('nav-active');
         });
