@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randevu Al - ÖZMER Halı Yıkama</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="ÖZMER Halı Yıkama Logo">
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="hizmetler.html">Hizmetlerimiz</a></li>
+                <li><a href="fiyatlar.html">Fiyatlar</a></li>
+                <li><a href="kampanyalar.html">Kampanyalar</a></li>
+                <li><a href="yorumlar.html">Müşteri Yorumları</a></li>
+                <li><a href="randevu.html">Randevu Al</a></li>
+                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>Online Randevu</h1>
+    </section>
+
+    <section class="appointment">
+        <form class="appointment-form">
+            <div class="form-group">
+                <label for="name">Adınız Soyadınız*</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Telefon Numaranız*</label>
+                <input type="tel" id="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-posta Adresiniz</label>
+                <input type="email" id="email">
+            </div>
+            <div class="form-group">
+                <label for="service">Hizmet Seçiniz*</label>
+                <select id="service" required>
+                    <option value="">Seçiniz</option>
+                    <option value="hali">Halı Yıkama</option>
+                    <option value="koltuk">Koltuk Yıkama</option>
+                    <option value="perde">Perde Yıkama</option>
+                    <option value="yorgan">Yorgan Yıkama</option>
+                    <option value="battaniye">Battaniye Yıkama</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date">Tercih Ettiğiniz Tarih*</label>
+                <input type="date" id="date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Tercih Ettiğiniz Saat</label>
+                <select id="time">
+                    <option value="">Seçiniz</option>
+                    <option value="09:00">09:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="address">Adresiniz*</label>
+                <textarea id="address" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="notes">Notunuz</label>
+                <textarea id="notes"></textarea>
+            </div>
+            <button type="submit">Randevu Oluştur</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 ÖZMER Halı Yıkama. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('nav-active');
+        });
+    </script>
+</body>
+</html> 

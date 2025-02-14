@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - ÖZMER Halı Yıkama</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="ÖZMER Halı Yıkama Logo">
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="hizmetler.html">Hizmetlerimiz</a></li>
+                <li><a href="fiyatlar.html">Fiyatlar</a></li>
+                <li><a href="kampanyalar.html">Kampanyalar</a></li>
+                <li><a href="yorumlar.html">Müşteri Yorumları</a></li>
+                <li><a href="randevu.html">Randevu Al</a></li>
+                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>İletişim</h1>
+    </section>
+
+    <section class="contact-page">
+        <div class="contact-info-detailed">
+            <h2>İletişim Bilgilerimiz</h2>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Adres</h3>
+                        <p>Örnektepe Mah. Kanarya Sk. No:71 BEYOĞLU/İSTANBUL</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h3>Telefon</h3>
+                        <p>(0212) 321 54 62</p>
+                        <p>(0532) 241 89 69</p>
+                        <p>(0543) 546 90 84</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h3>Çalışma Saatleri</h3>
+                        <p>Pazartesi - Cumartesi: 09:00 - 18:00</p>
+                        <p>Pazar: Kapalı</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form-section">
+            <h2>Bize Mesaj Gönderin</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Adınız Soyadınız*</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-posta Adresiniz*</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefon Numaranız</label>
+                    <input type="tel" id="phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Mesajınız*</label>
+                    <textarea id="message" required></textarea>
+                </div>
+                <button type="submit">Gönder</button>
+            </form>
+        </div>
+
+        <div class="map-section">
+            <h2>Konum</h2>
+            <div class="map">
+                <!-- Google Harita Yerleştirme Kodu Buraya Gelecek -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d..." 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 ÖZMER Halı Yıkama. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('nav-active');
+        });
+    </script>
+</body>
+</html> 
