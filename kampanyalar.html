@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kampanyalar - ÖZMER Halı Yıkama</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="ÖZMER Halı Yıkama Logo">
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="hizmetler.html">Hizmetlerimiz</a></li>
+                <li><a href="fiyatlar.html">Fiyatlar</a></li>
+                <li><a href="kampanyalar.html">Kampanyalar</a></li>
+                <li><a href="yorumlar.html">Müşteri Yorumları</a></li>
+                <li><a href="randevu.html">Randevu Al</a></li>
+                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>Güncel Kampanyalar</h1>
+    </section>
+
+    <section class="campaigns">
+        <div class="campaign-cards">
+            <div class="campaign-card">
+                <h3>Bahar Temizliği Fırsatı</h3>
+                <p>5 m² üzeri halı yıkamada %20 indirim!</p>
+                <span class="campaign-date">30 Nisan'a kadar geçerli</span>
+            </div>
+            <div class="campaign-card">
+                <h3>Perde Yıkama Kampanyası</h3>
+                <p>Tüm perde yıkamalarında %15 indirim</p>
+                <span class="campaign-date">Nisan ayı boyunca</span>
+            </div>
+            <div class="campaign-card">
+                <h3>Komple Temizlik Paketi</h3>
+                <p>Halı + Koltuk + Perde yıkamalarında %25 indirim</p>
+                <span class="campaign-date">Sınırlı süre için geçerli</span>
+            </div>
+            <div class="campaign-card">
+                <h3>Yeni Müşteri Özel</h3>
+                <p>İlk siparişinizde %10 indirim</p>
+                <span class="campaign-date">Sürekli kampanya</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 ÖZMER Halı Yıkama. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('nav-active');
+        });
+    </script>
+</body>
+</html> 
