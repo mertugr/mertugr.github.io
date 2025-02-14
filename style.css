@@ -5,9 +5,30 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Logo Styles */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 60px;
+    width: auto;
+}
+
+/* Update Color Scheme */
+:root {
+    --primary-color: #1e3c72;    /* Koyu mavi */
+    --secondary-color: #2a5298;  /* Orta mavi */
+    --accent-color: #ff9800;     /* Turuncu - vurgu rengi */
+    --text-color: #2c3e50;       /* Koyu gri - metin rengi */
+    --light-bg: #f5f7fa;         /* Açık gri - arka plan */
+    --white: #ffffff;
+}
+
 /* Header Styles */
 header {
-    background-color: #ffffff;
+    background-color: var(--white);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: fixed;
     width: 100%;
@@ -41,19 +62,19 @@ nav {
 
 .nav-links li a {
     text-decoration: none;
-    color: #2c3e50;
+    color: var(--primary-color);
     padding: 0.5rem 1rem;
     transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
-    color: #3498db;
+    color: var(--accent-color);
 }
 
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://example.com/carpet-bg.jpg');
+    background: linear-gradient(rgba(30, 60, 114, 0.8), rgba(42, 82, 152, 0.8)), url('https://example.com/carpet-bg.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -72,7 +93,7 @@ nav {
 .cta-button {
     display: inline-block;
     padding: 1rem 2rem;
-    background-color: #3498db;
+    background-color: var(--accent-color);
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -81,7 +102,7 @@ nav {
 }
 
 .cta-button:hover {
-    background-color: #2980b9;
+    background-color: #f57c00;
 }
 
 /* Services Section */
@@ -115,10 +136,11 @@ nav {
 
 .service-card:hover {
     transform: translateY(-5px);
+    border-color: var(--accent-color);
 }
 
 .service-card i {
-    color: #3498db;
+    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
@@ -164,7 +186,7 @@ nav {
 }
 
 .contact-info i {
-    color: #3498db;
+    color: var(--primary-color);
     margin-right: 1rem;
 }
 
@@ -188,7 +210,7 @@ nav {
 
 .contact-form button {
     padding: 1rem;
-    background-color: #3498db;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 5px;
@@ -197,18 +219,157 @@ nav {
 }
 
 .contact-form button:hover {
-    background-color: #2980b9;
+    background-color: var(--secondary-color);
 }
 
 /* Footer */
 footer {
-    background-color: #2c3e50;
+    background-color: var(--primary-color);
     color: white;
     text-align: center;
     padding: 1rem;
 }
 
-/* Responsive Design */
+/* Prices Section */
+.prices {
+    padding: 5rem 5%;
+    background-color: #fff;
+}
+
+.prices h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #2c3e50;
+}
+
+.price-table {
+    max-width: 800px;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+
+.price-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.price-table th, .price-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.price-table th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Campaigns Section */
+.campaigns {
+    padding: 5rem 5%;
+    background-color: #f9f9f9;
+}
+
+.campaign-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.campaign-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-left: 5px solid var(--accent-color);
+}
+
+.campaign-date {
+    display: block;
+    margin-top: 1rem;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 5rem 5%;
+    background-color: #fff;
+}
+
+.testimonial-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.stars {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.customer-name {
+    display: block;
+    margin-top: 1rem;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+/* Appointment Section */
+.appointment {
+    padding: 5rem 5%;
+    background-color: #f9f9f9;
+}
+
+.appointment-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.appointment-form input,
+.appointment-form select,
+.appointment-form textarea {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.appointment-form button {
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.appointment-form button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Update Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -218,7 +379,17 @@ footer {
         font-size: 2rem;
     }
     
-    .service-cards {
+    .service-cards,
+    .campaign-cards,
+    .testimonial-cards {
         grid-template-columns: 1fr;
+    }
+    
+    .price-table {
+        overflow-x: auto;
+    }
+    
+    .logo img {
+        max-height: 50px;
     }
 } 

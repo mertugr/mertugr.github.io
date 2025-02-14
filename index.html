@@ -11,12 +11,15 @@
     <header>
         <nav>
             <div class="logo">
-                <h1>ÖZMER</h1>
-                <p>Halı Yıkama</p>
+                <img src="logo.png" alt="ÖZMER Halı Yıkama Logo">
             </div>
             <ul class="nav-links">
                 <li><a href="#anasayfa">Ana Sayfa</a></li>
                 <li><a href="#hizmetler">Hizmetlerimiz</a></li>
+                <li><a href="#fiyatlar">Fiyatlar</a></li>
+                <li><a href="#kampanyalar">Kampanyalar</a></li>
+                <li><a href="#yorumlar">Müşteri Yorumları</a></li>
+                <li><a href="#randevu">Randevu Al</a></li>
                 <li><a href="#hakkimizda">Hakkımızda</a></li>
                 <li><a href="#iletisim">İletişim</a></li>
             </ul>
@@ -45,11 +48,120 @@
                 <p>Leke çıkarma ve derinlemesine temizlik</p>
             </div>
             <div class="service-card">
+                <i class="fas fa-wind fa-3x"></i>
+                <h3>Stor & Zebra Perde</h3>
+                <p>Özel yıkama teknikleriyle perde temizliği</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-bed fa-3x"></i>
+                <h3>Yorgan Yıkama</h3>
+                <p>Hijyenik yorgan temizliği</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-blanket fa-3x"></i>
+                <h3>Battaniye Yıkama</h3>
+                <p>Özenli battaniye temizliği</p>
+            </div>
+            <div class="service-card">
                 <i class="fas fa-spray-can fa-3x"></i>
                 <h3>Antibakteriyel İşlem</h3>
                 <p>Sağlığınız için özel koruma</p>
             </div>
         </div>
+    </section>
+
+    <section id="fiyatlar" class="prices">
+        <h2>Fiyat Listesi</h2>
+        <div class="price-table">
+            <table>
+                <tr>
+                    <th>Hizmet</th>
+                    <th>Birim</th>
+                    <th>Fiyat</th>
+                </tr>
+                <tr>
+                    <td>Halı Yıkama</td>
+                    <td>m²</td>
+                    <td>₺25</td>
+                </tr>
+                <tr>
+                    <td>Stor Perde</td>
+                    <td>m²</td>
+                    <td>₺30</td>
+                </tr>
+                <tr>
+                    <td>Zebra Perde</td>
+                    <td>m²</td>
+                    <td>₺35</td>
+                </tr>
+                <tr>
+                    <td>Yorgan</td>
+                    <td>Adet</td>
+                    <td>₺120</td>
+                </tr>
+                <tr>
+                    <td>Battaniye</td>
+                    <td>Adet</td>
+                    <td>₺90</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section id="kampanyalar" class="campaigns">
+        <h2>Güncel Kampanyalar</h2>
+        <div class="campaign-cards">
+            <div class="campaign-card">
+                <h3>Bahar Temizliği Fırsatı</h3>
+                <p>5 m² üzeri halı yıkamada %20 indirim!</p>
+                <span class="campaign-date">30 Nisan'a kadar geçerli</span>
+            </div>
+            <div class="campaign-card">
+                <h3>Perde Yıkama Kampanyası</h3>
+                <p>Tüm perde yıkamalarında %15 indirim</p>
+                <span class="campaign-date">Nisan ayı boyunca</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="yorumlar" class="testimonials">
+        <h2>Müşteri Yorumları</h2>
+        <div class="testimonial-cards">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Çok memnun kaldım, halılarım tertemiz oldu."</p>
+                <span class="customer-name">- Ayşe Y.</span>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Hızlı ve profesyonel hizmet. Teşekkürler!"</p>
+                <span class="customer-name">- Mehmet K.</span>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Perdelerim ilk günkü gibi oldu."</p>
+                <span class="customer-name">- Zeynep A.</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="randevu" class="appointment">
+        <h2>Online Randevu</h2>
+        <form class="appointment-form">
+            <input type="text" placeholder="Adınız Soyadınız" required>
+            <input type="tel" placeholder="Telefon Numaranız" required>
+            <input type="email" placeholder="E-posta Adresiniz" required>
+            <select required>
+                <option value="">Hizmet Seçiniz</option>
+                <option value="hali">Halı Yıkama</option>
+                <option value="perde">Perde Yıkama</option>
+                <option value="yorgan">Yorgan Yıkama</option>
+                <option value="battaniye">Battaniye Yıkama</option>
+            </select>
+            <input type="date" required>
+            <textarea placeholder="Notunuz (Adres vb.)" required></textarea>
+            <button type="submit">Randevu Oluştur</button>
+        </form>
     </section>
 
     <section id="hakkimizda" class="about">
@@ -62,9 +174,11 @@
         <div class="contact-container">
             <div class="contact-info">
                 <h3>Bize Ulaşın</h3>
-                <p><i class="fas fa-phone"></i> +90 555 123 4567</p>
+                <p><i class="fas fa-phone"></i> (0212) 321 54 62</p>
+                <p><i class="fas fa-mobile-alt"></i> (0532) 241 89 69</p>
+                <p><i class="fas fa-mobile-alt"></i> (0543) 546 90 84</p>
                 <p><i class="fas fa-envelope"></i> info@ozmerhaliyikama.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Örnek Mahallesi, Örnek Sokak No:123 İstanbul</p>
+                <p><i class="fas fa-map-marker-alt"></i> Örnektepe Mah. Kanarya Sk. No:71 BEYOĞLU/İSTANBUL</p>
             </div>
             <form class="contact-form">
                 <input type="text" placeholder="Adınız" required>
