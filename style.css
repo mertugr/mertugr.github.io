@@ -936,6 +936,12 @@ footer {
     text-align: center;
 }
 
+.cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
 .contact-buttons {
     display: flex;
     gap: 1rem;
@@ -954,6 +960,8 @@ footer {
     color: white;
     font-weight: bold;
     transition: transform 0.3s ease;
+    min-width: 200px;
+    justify-content: center;
 }
 
 .phone-button {
@@ -967,10 +975,23 @@ footer {
 .phone-button:hover,
 .whatsapp-button:hover {
     transform: translateY(-3px);
+    opacity: 0.9;
 }
 
 .phone-button i,
 .whatsapp-button i {
     margin-right: 0.5rem;
     font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+    
+    .phone-button,
+    .whatsapp-button {
+        width: 100%;
+        max-width: 300px;
+    }
 }
