@@ -797,7 +797,7 @@ footer {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    background: linear-gradient(rgba(30, 60, 114, 0.5), rgba(42, 82, 152, 0.5)), url('images/reason1.jpg');
+    background: linear-gradient(rgba(30, 60, 114, 0), rgba(42, 82, 152, 0)), url('images/reason1.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
