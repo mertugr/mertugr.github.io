@@ -870,7 +870,7 @@ footer {
 /* Featured Services Section */
 .featured-services {
     padding: 4rem 5%;
-    background-color: var(--white);
+    background-color: #f8f9fa;
 }
 
 .featured-services h2 {
@@ -880,90 +880,77 @@ footer {
     font-size: 2rem;
 }
 
-.service-grid {
+.services-container {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
-    flex-wrap: wrap;
+    padding: 0 15px;
 }
 
-.service-item {
+.service-box {
     flex: 1;
-    min-width: 300px;
-    max-width: 350px;
-    background: var(--white);
-    padding: 2rem;
+    background: white;
+    padding: 30px;
     border-radius: 10px;
     text-align: center;
-    text-decoration: none;
-    color: var(--text-color);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    border: 1px solid #eee;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    min-width: 250px;
+    max-width: 350px;
 }
 
-.service-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+.service-box:hover {
+    transform: translateY(-10px);
 }
 
-.service-item i {
-    font-size: 2.5rem;
+.service-box i {
+    font-size: 3rem;
     color: var(--accent-color);
-    margin-bottom: 1.5rem;
-    display: block;
+    margin-bottom: 20px;
 }
 
-.service-item h3 {
+.service-box h3 {
     color: var(--primary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 15px;
     font-size: 1.5rem;
 }
 
-.service-item p {
-    margin-bottom: 1.5rem;
+.service-box p {
     color: var(--text-color);
+    margin-bottom: 20px;
     line-height: 1.6;
 }
 
 .service-link {
     display: inline-block;
     color: var(--accent-color);
+    text-decoration: none;
     font-weight: bold;
-    position: relative;
-    padding-bottom: 2px;
+    padding: 8px 20px;
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
-.service-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--accent-color);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-
-.service-item:hover .service-link::after {
-    transform: scaleX(1);
+.service-link:hover {
+    background: var(--accent-color);
+    color: white;
 }
 
 @media (max-width: 992px) {
-    .service-grid {
-        gap: 1.5rem;
+    .services-container {
+        flex-wrap: wrap;
     }
     
-    .service-item {
-        min-width: 280px;
+    .service-box {
+        flex: 0 0 calc(50% - 30px);
     }
 }
 
 @media (max-width: 768px) {
-    .service-item {
-        min-width: 100%;
+    .service-box {
+        flex: 0 0 100%;
     }
 } 
