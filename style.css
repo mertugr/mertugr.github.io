@@ -788,7 +788,7 @@ footer {
 
 .reasons-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
@@ -799,7 +799,7 @@ footer {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: relative;
     color: white;
-    height: 200px;
+    min-height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -818,11 +818,6 @@ footer {
     z-index: 1;
 }
 
-.reason-item > * {
-    position: relative;
-    z-index: 2;
-}
-
 .reason-item:nth-child(1) {
     background: url('images/reason1.jpg') center/cover no-repeat;
 }
@@ -836,11 +831,4 @@ footer {
 }
 
 .reason-item:nth-child(4) {
-    background: url('images/reason4.jpg') center/cover no-repeat;
-}
-
-@media (max-width: 768px) {
-    .reason-item {
-        height: 150px;
-    }
-}
+    background: url('images/reason4.jpg') center/
