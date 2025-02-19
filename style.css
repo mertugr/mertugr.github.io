@@ -109,7 +109,7 @@ nav {
 }
 
 .cta-button.primary {
-    background: #d500f9;
+    background: var(--accent-color);
     color: var(--white);
 }
 
@@ -973,7 +973,7 @@ footer {
 }
 
 .phone-button {
-    background-color: var(--accent-color);
+    background: var(--accent-color);
 }
 
 .whatsapp-button {
