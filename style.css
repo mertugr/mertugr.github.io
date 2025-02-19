@@ -28,12 +28,11 @@
     --white: #ffffff;
 }
 
-/* Header Styles */
+/* Navigation Styles */
 header {
-    background-color: var(--white);
+    background: var(--white);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: fixed;
-    width: 100%;
+    position: sticky;
     top: 0;
     z-index: 1000;
 }
@@ -42,70 +41,49 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 5%;
-    max-width: 1200px;
+    padding: 1rem 5%;
+    max-width: 1400px;
     margin: 0 auto;
-    flex-wrap: wrap;
-}
-
-.logo h1 {
-    color: #2c3e50;
-    font-size: 2rem;
-}
-
-.logo p {
-    color: #7f8c8d;
-    font-size: 0.9rem;
 }
 
 .nav-links {
     display: flex;
+    gap: 2rem;
     list-style: none;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
-.nav-links li {
-    margin: 0 5px;
-}
-
-.nav-links li a {
+.nav-links a {
     text-decoration: none;
-    color: var(--primary-color);
-    padding: 0.5rem 0.8rem;
-    font-size: 0.9rem;
+    color: var(--text-color);
+    font-weight: 500;
     transition: color 0.3s ease;
-    white-space: nowrap;
 }
 
-.nav-links li a:hover {
+.nav-links a:hover {
     color: var(--accent-color);
 }
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 80vh;
     background: linear-gradient(rgba(30, 60, 114, 0.85), rgba(42, 82, 152, 0.85)), url('background.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
-    padding-top: 80px;
+    color: var(--white);
+    padding: 2rem 5%;
 }
 
 .hero-content {
     max-width: 800px;
-    padding: 0 2rem;
 }
 
-.hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
 .hero-subtitle {
@@ -122,6 +100,7 @@ nav {
 }
 
 .cta-button {
+    display: inline-block;
     padding: 1rem 2rem;
     border-radius: 5px;
     text-decoration: none;
@@ -130,14 +109,14 @@ nav {
 }
 
 .cta-button.primary {
-    background-color: var(--accent-color);
-    color: white;
+    background: var(--accent-color);
+    color: var(--white);
 }
 
 .cta-button.secondary {
-    background-color: transparent;
-    border: 2px solid white;
-    color: white;
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
 }
 
 .cta-button:hover {
@@ -740,27 +719,23 @@ footer {
 /* Features Section */
 .features {
     padding: 4rem 5%;
-    background-color: var(--white);
+    background: var(--white);
 }
 
 .features-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    justify-content: center;
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 .feature-item {
+    flex: 1;
+    min-width: 250px;
     text-align: center;
     padding: 2rem;
-    border-radius: 10px;
-    background: var(--light-bg);
-    transition: transform 0.3s ease;
-}
-
-.feature-item:hover {
-    transform: translateY(-5px);
 }
 
 .feature-item i {
@@ -769,10 +744,20 @@ footer {
     margin-bottom: 1rem;
 }
 
+.feature-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
 /* Why Choose Us Section */
 .why-choose-us {
-    padding: 5rem 5%;
-    background-color: var(--light-bg);
+    padding: 4rem 5%;
+    background: var(--light-bg);
 }
 
 .why-choose-content {
@@ -941,4 +926,51 @@ footer {
     .service-box {
         flex: 0 0 100%;
     }
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 5rem 5%;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-align: center;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.phone-button,
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.phone-button {
+    background-color: var(--accent-color);
+}
+
+.whatsapp-button {
+    background-color: #25D366;
+}
+
+.phone-button:hover,
+.whatsapp-button:hover {
+    transform: translateY(-3px);
+}
+
+.phone-button i,
+.whatsapp-button i {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
 }
