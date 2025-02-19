@@ -22,7 +22,7 @@
 :root {
     --primary-color: #1e3c72;    /* Koyu mavi */
     --secondary-color: #2a5298;  /* Orta mavi */
-    --accent-color: #ff9800;     /* Turuncu - vurgu rengi */
+    --accent-color: rgb(213, 0, 249);     /* Mor - vurgu rengi */
     --text-color: #2c3e50;       /* Koyu gri - metin rengi */
     --light-bg: #f5f7fa;         /* Açık gri - arka plan */
     --white: #ffffff;
@@ -109,7 +109,7 @@ nav {
 }
 
 .cta-button.primary {
-    background: var(--accent-color);
+    background: rgb(213, 0, 249);
     color: var(--white);
 }
 
