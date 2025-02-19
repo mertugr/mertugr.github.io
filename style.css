@@ -795,15 +795,70 @@ footer {
 .reason-item {
     text-align: center;
     padding: 2rem;
-    background: var(--white);
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.reason-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(30, 60, 114, 0.85);
+    z-index: 1;
+}
+
+.reason-item > * {
+    position: relative;
+    z-index: 2;
+}
+
+.reason-item:nth-child(1) {
+    background-image: url('images/reason1.jpg');
+}
+
+.reason-item:nth-child(2) {
+    background-image: url('images/reason2.jpg');
+}
+
+.reason-item:nth-child(3) {
+    background-image: url('images/reason3.jpg');
+}
+
+.reason-item:nth-child(4) {
+    background-image: url('images/reason4.jpg');
 }
 
 .reason-item i {
     font-size: 2rem;
-    color: var(--accent-color);
+    color: white;
     margin-bottom: 1rem;
+}
+
+.reason-item h3 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.reason-item p {
+    color: white;
+    opacity: 0.9;
+}
+
+.reason-item:hover::before {
+    background: rgba(30, 60, 114, 0.7);
 }
 
 /* CTA Section */
