@@ -818,6 +818,11 @@ footer {
     z-index: 1;
 }
 
+.reason-item > * {
+    position: relative;
+    z-index: 2;
+}
+
 .reason-item:nth-child(1) {
     background: url('images/reason1.jpg') center/cover no-repeat;
 }
@@ -831,4 +836,21 @@ footer {
 }
 
 .reason-item:nth-child(4) {
-    background: url('images/reason4.jpg') center/
+    background: url('images/reason4.jpg') center/cover no-repeat;
+}
+
+.reason-item i {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.reason-item h3 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.reason-item p {
+    color: white;
+    opacity: 0.9;
+}
