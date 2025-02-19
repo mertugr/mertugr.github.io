@@ -936,15 +936,21 @@ footer {
     text-align: center;
 }
 
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .cta-content h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
     color: white;
+    line-height: 1.2;
 }
 
 .contact-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     justify-content: center;
     margin-top: 2rem;
     flex-wrap: wrap;
@@ -954,14 +960,16 @@ footer {
 .whatsapp-button {
     display: inline-flex;
     align-items: center;
-    padding: 1rem 2rem;
-    border-radius: 5px;
+    justify-content: center;
+    padding: 1.2rem 2.5rem;
+    border-radius: 8px;
     text-decoration: none;
     color: white;
     font-weight: bold;
-    transition: transform 0.3s ease;
-    min-width: 200px;
-    justify-content: center;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    min-width: 250px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .phone-button {
@@ -975,13 +983,13 @@ footer {
 .phone-button:hover,
 .whatsapp-button:hover {
     transform: translateY(-3px);
-    opacity: 0.9;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .phone-button i,
 .whatsapp-button i {
-    margin-right: 0.5rem;
-    font-size: 1.2rem;
+    margin-right: 0.8rem;
+    font-size: 1.3rem;
 }
 
 @media (max-width: 768px) {
@@ -989,9 +997,14 @@ footer {
         font-size: 2rem;
     }
     
+    .contact-buttons {
+        gap: 1rem;
+    }
+    
     .phone-button,
     .whatsapp-button {
         width: 100%;
         max-width: 300px;
+        padding: 1rem 2rem;
     }
 }
