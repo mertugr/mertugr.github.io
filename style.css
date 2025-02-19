@@ -826,19 +826,19 @@ footer {
 }
 
 .reason-item:nth-child(1) {
-    background-image: url('images/reason1.jpg');
+    background-image: url('./images/reason1.jpg');
 }
 
 .reason-item:nth-child(2) {
-    background-image: url('images/reason2.jpg');
+    background-image: url('./images/reason2.jpg');
 }
 
 .reason-item:nth-child(3) {
-    background-image: url('images/reason3.jpg');
+    background-image: url('./images/reason3.jpg');
 }
 
 .reason-item:nth-child(4) {
-    background-image: url('images/reason4.jpg');
+    background-image: url('./images/reason4.jpg');
 }
 
 .reason-item i {
