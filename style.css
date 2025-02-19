@@ -869,37 +869,30 @@ footer {
 
 /* Featured Services Section */
 .featured-services {
-    padding: 5rem 5%;
-    background-color: var(--light-bg);
+    padding: 4rem 5%;
+    background-color: var(--white);
 }
 
 .featured-services h2 {
     text-align: center;
     color: var(--primary-color);
     margin-bottom: 3rem;
+    font-size: 2rem;
 }
 
 .service-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: center;
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
-}
-
-@media (max-width: 992px) {
-    .service-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .service-grid {
-        grid-template-columns: 1fr;
-    }
+    flex-wrap: wrap;
 }
 
 .service-item {
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
     background: var(--white);
     padding: 2rem;
     border-radius: 10px;
@@ -907,45 +900,70 @@ footer {
     text-decoration: none;
     color: var(--text-color);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    align-items: center;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
 }
 
 .service-item:hover {
     transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.service-icon {
-    width: 80px;
-    height: 80px;
-    background: var(--light-bg);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-}
-
-.service-icon i {
-    font-size: 2rem;
+.service-item i {
+    font-size: 2.5rem;
     color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    display: block;
 }
 
 .service-item h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
+    font-size: 1.5rem;
 }
 
 .service-item p {
     margin-bottom: 1.5rem;
+    color: var(--text-color);
     line-height: 1.6;
 }
 
 .service-link {
+    display: inline-block;
     color: var(--accent-color);
     font-weight: bold;
-    margin-top: auto;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.service-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover .service-link::after {
+    transform: scaleX(1);
+}
+
+@media (max-width: 992px) {
+    .service-grid {
+        gap: 1.5rem;
+    }
+    
+    .service-item {
+        min-width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-item {
+        min-width: 100%;
+    }
 } 
