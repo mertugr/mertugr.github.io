@@ -797,8 +797,7 @@ footer {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    background-size: cover;
-    background-position: center;
+    background: linear-gradient(rgba(30, 60, 114, 0.85), rgba(42, 82, 152, 0.85)), url('images/reason1.jpg');
     position: relative;
     color: white;
     min-height: 250px;
@@ -826,19 +825,19 @@ footer {
 }
 
 .reason-item:nth-child(1) {
-    background-image: url('reason1.jpg');
+    background: linear-gradient(rgba(30, 60, 114, 0.85), rgba(42, 82, 152, 0.85)), url('images/reason1.jpg');
 }
 
 .reason-item:nth-child(2) {
-    background-image: url('reason2.jpg');
+    background: linear-gradient(rgba(30, 60, 114, 0.85), rgba(42, 82, 152, 0.85)), url('images/reason2.jpg');
 }
 
 .reason-item:nth-child(3) {
-    background-image: url('reason3.jpg');
+    background: linear-gradient(rgba(30, 60, 114, 0.85), rgba(42, 82, 152, 0.85)), url('images/reason3.jpg');
 }
 
 .reason-item:nth-child(4) {
-    background-image: url('reason4.jpg');
+    background: linear-gradient(rgba(30, 60, 114, 0.85), rgba(42, 82, 152, 0.85)), url('images/reason4.jpg');
 }
 
 .reason-item i {
@@ -857,8 +856,9 @@ footer {
     opacity: 0.9;
 }
 
-.reason-item:hover::before {
-    background: rgba(30, 60, 114, 0.7);
+.reason-item:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
 }
 
 /* CTA Section */
