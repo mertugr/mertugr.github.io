@@ -38,22 +38,22 @@
     </section>
 
     <section class="appointment">
-        <form class="appointment-form">
+        <form action="https://formsubmit.co/ozmerhaliyikama@gmail.com" method="POST" class="appointment-form">
             <div class="form-group">
                 <label for="name">Adınız Soyadınız*</label>
-                <input type="text" id="name" required>
+                <input type="text" name="name" id="name" required>
             </div>
             <div class="form-group">
                 <label for="phone">Telefon Numaranız*</label>
-                <input type="tel" id="phone" required>
+                <input type="tel" name="phone" id="phone" required>
             </div>
             <div class="form-group">
                 <label for="email">E-posta Adresiniz</label>
-                <input type="email" id="email">
+                <input type="email" name="email" id="email">
             </div>
             <div class="form-group">
                 <label for="service">Hizmet Seçiniz*</label>
-                <select id="service" required>
+                <select name="service" id="service" required>
                     <option value="">Seçiniz</option>
                     <option value="hali">Halı Yıkama</option>
                     <option value="koltuk">Koltuk Yıkama</option>
@@ -64,30 +64,21 @@
             </div>
             <div class="form-group">
                 <label for="date">Tercih Ettiğiniz Tarih*</label>
-                <input type="date" id="date" required>
-            </div>
-            <div class="form-group">
-                <label for="time">Tercih Ettiğiniz Saat</label>
-                <select id="time">
-                    <option value="">Seçiniz</option>
-                    <option value="09:00">09:00</option>
-                    <option value="10:00">10:00</option>
-                    <option value="11:00">11:00</option>
-                    <option value="12:00">12:00</option>
-                    <option value="14:00">14:00</option>
-                    <option value="15:00">15:00</option>
-                    <option value="16:00">16:00</option>
-                    <option value="17:00">17:00</option>
+                <select name="date" id="date" required>
+                    <option value="">Tarih Seçiniz</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="address">Adresiniz*</label>
-                <textarea id="address" required></textarea>
+                <textarea name="address" id="address" required></textarea>
             </div>
             <div class="form-group">
                 <label for="notes">Notunuz</label>
-                <textarea id="notes"></textarea>
+                <textarea name="notes" id="notes"></textarea>
             </div>
+            <input type="hidden" name="_subject" value="Yeni Randevu Talebi">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://mertugr.github.io/tesekkurler.html">
             <button type="submit">Randevu Oluştur</button>
         </form>
     </section>
@@ -100,6 +91,29 @@
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             document.querySelector('.nav-links').classList.toggle('nav-active');
         });
+
+        // Müsait günleri ayarla
+        const dateSelect = document.getElementById('date');
+        const today = new Date();
+        
+        // Sonraki 14 günü listeye ekle
+        for(let i = 1; i <= 14; i++) {
+            const date = new Date(today);
+            date.setDate(today.getDate() + i);
+            
+            // Pazar günlerini hariç tut
+            if(date.getDay() !== 0) {
+                const dateStr = date.toISOString().split('T')[0];
+                const dateOption = document.createElement('option');
+                dateOption.value = dateStr;
+                
+                // Türkçe tarih formatı
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                dateOption.textContent = date.toLocaleDateString('tr-TR', options);
+                
+                dateSelect.appendChild(dateOption);
+            }
+        }
     </script>
 </body>
 </html> 
