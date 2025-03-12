@@ -294,20 +294,19 @@ footer {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px; /* Butonun boyutunu logoya uygun yap */
-    height: 40px;
+    width: auto; /* Sabit genişlik yerine içeriğe göre ayarlasın */
+    height: auto;
     background: transparent; /* Arka planı kaldır */
-    color: inherit; /* Varsayılan rengi kullan */
     text-decoration: none;
-    border-radius: 50%; /* Daire şekli için */
+    border-radius: 0; /* Yuvarlak yapıyı kaldır */
+    padding: 0; /* Ekstra boşlukları kaldır */
     transition: transform 0.3s ease;
-    padding: 0; /* İç boşlukları kaldır */
 }
 
 .social-button img {
-    width: 100%; /* Logoyu buton içine tam oturt */
-    height: 100%;
-    object-fit: contain;
+    width: 32px; /* Logonun boyutunu ayarla (İhtiyacına göre değiştir) */
+    height: auto; /* Orijinal oranlarını korusun */
+    display: block; /* Kenar boşlukları engelle */
 }
 
 .social-button:hover {
