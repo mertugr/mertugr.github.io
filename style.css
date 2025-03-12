@@ -290,25 +290,30 @@ footer {
     text-decoration: underline;
 }
 
-.social-links {
-    margin-top: 1rem;
-}
-
 .social-button {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.8rem 1.5rem;
-    background: #1877f2;
-    color: white;
+    justify-content: center;
+    width: 40px; /* Butonun boyutunu logoya uygun yap */
+    height: 40px;
+    background: transparent; /* Arka planı kaldır */
+    color: inherit; /* Varsayılan rengi kullan */
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 50%; /* Daire şekli için */
     transition: transform 0.3s ease;
+    padding: 0; /* İç boşlukları kaldır */
+}
+
+.social-button img {
+    width: 100%; /* Logoyu buton içine tam oturt */
+    height: 100%;
+    object-fit: contain;
 }
 
 .social-button:hover {
     transform: translateY(-3px);
 }
+
 
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
