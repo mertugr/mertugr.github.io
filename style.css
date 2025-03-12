@@ -304,9 +304,10 @@ footer {
 }
 
 .social-button img {
-    width: 32px; /* Logonun boyutunu ayarla (İhtiyacına göre değiştir) */
-    height: auto; /* Orijinal oranlarını korusun */
-    display: block; /* Kenar boşlukları engelle */
+    width: 40px; /* Sabit genişlik */
+    height: 40px; /* Sabit yükseklik */
+    object-fit: contain; /* Oranı koruyarak sığdır */
+    display: block; /* Kenar boşluklarını kaldır */
 }
 
 .social-button:hover {
