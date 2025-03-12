@@ -308,6 +308,7 @@ footer {
     height: 40px; /* Sabit yükseklik */
     object-fit: contain; /* Oranı koruyarak sığdır */
     display: block; /* Kenar boşluklarını kaldır */
+    margin-right: 20px;
 }
 
 .social-button:hover {
