@@ -203,7 +203,9 @@ nav {
 }
 
 .contact-info {
-    padding: 2rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
 .contact-info p {
@@ -636,17 +638,13 @@ footer {
 
 .contact-item {
     display: flex;
-    align-items: flex-start;
-    padding: 2rem;
-    background: var(--white);
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    align-items: center;
+    margin-right: 20px;
 }
 
 .contact-item i {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-right: 1rem;
+    font-size: 1.5rem;
+    margin-right: 10px;
 }
 
 .contact-item h3 {
