@@ -412,6 +412,7 @@ footer {
 
 .testimonial-cards {
     display: grid;
+
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     max-width: 1200px;
@@ -426,7 +427,7 @@ footer {
 }
 
 .stars {
-    color: var(--accent-color);
+    color: #ffbf00;
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
