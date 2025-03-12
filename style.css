@@ -641,18 +641,21 @@ footer {
     align-items: center;
     margin-right: 20px;
     line-height: 1;
+    margin-left: 0.5rem;
 }
 
 .contact-item i {
     font-size: 1.5rem;
     margin-right: 10px;
     line-height: 1;
+    margin-left: 0.5rem;
 }
 
 .contact-item h3 {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
     line-height: 1;
+    margin-left: 0.5rem;
 }
 
 .map-section {
