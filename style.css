@@ -546,9 +546,9 @@ footer {
 
 /* Page Header */
 .page-header {
-    background: var(--primary-color);
-    color: white;
-    padding: 100px 5% 40px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 2rem 0;
     text-align: center;
 }
 
