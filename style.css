@@ -407,37 +407,75 @@ footer {
 
 /* Testimonials Section */
 .testimonials {
-    padding: 5rem 5%;
-    background-color: #fff;
+    padding: 4rem 5%;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.testimonials-header {
+    margin-bottom: 3rem;
+}
+
+.testimonials-header h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
 }
 
 .testimonial-cards {
     display: grid;
-
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 3rem;
 }
 
 .testimonial-card {
-    background-color: #f9f9f9;
+    background: white;
     padding: 2rem;
     border-radius: 10px;
-    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
-.stars {
-    color: #ffbf00;
-    font-size: 1.5rem;
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-card .stars {
+    color: #ffc107;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
 }
 
-.customer-name {
-    display: block;
-    margin-top: 1rem;
-    color: #7f8c8d;
+.testimonial-card p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.testimonial-card .customer-name {
+    color: #666;
     font-style: italic;
+}
+
+.testimonials-footer {
+    margin-top: 2rem;
+}
+
+.read-more-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.read-more-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
 }
 
 /* Appointment Section */
