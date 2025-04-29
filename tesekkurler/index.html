@@ -5,7 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teşekkürler - ÖZMER Halı Yıkama</title>
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+    <style>
+        .thank-you-section {
+            padding: 5rem 5%;
+            text-align: center;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .thank-you-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .thank-you-icon {
+            color: var(--accent-color);
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        .thank-you-title {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .thank-you-message {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .return-home {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .return-home:hover {
+            transform: translateY(-3px);
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -33,12 +81,15 @@
         </nav>
     </header>
 
-    <section class="thank-you">
+    <section class="thank-you-section">
         <div class="thank-you-content">
-            <i class="fas fa-check-circle"></i>
-            <h1>Teşekkürler!</h1>
-            <p>Randevu talebiniz başarıyla alınmıştır. En kısa sürede sizinle iletişime geçeceğiz.</p>
-            <a href="/" class="cta-button">Ana Sayfaya Dön</a>
+            <i class="fas fa-check-circle thank-you-icon"></i>
+            <h1 class="thank-you-title">Teşekkürler!</h1>
+            <p class="thank-you-message">
+                Talebiniz bize başarıyla ulaştı. En kısa sürede sizinle iletişime geçeceğiz.
+                Gösterdiğiniz ilgi için teşekkür ederiz.
+            </p>
+            <a href="/" class="return-home">Ana Sayfaya Dön</a>
         </div>
     </section>
 
@@ -51,8 +102,6 @@
                         <li><a href="/hizmetlerimiz/hali-yikama">Halı Yıkama</a></li>
                         <li><a href="/hizmetlerimiz/perde-yikama">Perde Yıkama</a></li>
                         <li><a href="/hizmetlerimiz/yorgan-yikama">Yorgan ve Battaniye Yıkama</a></li>
-                        <li><a href="/hizmetlerimiz/yatak-yikama">Yatak Yıkama</a></li>
-                        <li><a href="/hizmetlerimiz/koltuk-yikama">Koltuk Yıkama</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -73,6 +122,7 @@
                     </ul>
                 </div>
                 <div class="footer-section">
+                    
                     <div class="social-links">
                         <a href="https://www.instagram.com/ozmerhaliyikama" class="social-button" target="_blank" rel="noopener noreferrer">
                             <img src="/instagram-logo.png" alt="Instagram">
@@ -81,6 +131,7 @@
                             <img src="/facebook-logo.png" alt="Facebook">
                         </a>
                     </div>
+                    
                 </div>
             </div>
             <div class="footer-bottom">
