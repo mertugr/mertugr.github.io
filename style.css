@@ -123,6 +123,49 @@ nav {
     transform: translateY(-3px);
 }
 
+.hero-phone {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.phone-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 3rem;
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.phone-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.phone-link i {
+    font-size: 2rem;
+    color: #ffc107;
+}
+
+@media (max-width: 768px) {
+    .phone-link {
+        font-size: 1.8rem;
+        padding: 1rem 2rem;
+    }
+    
+    .phone-link i {
+        font-size: 1.5rem;
+    }
+}
+
 /* Services Section */
 .services {
     padding: 5rem 5%;
