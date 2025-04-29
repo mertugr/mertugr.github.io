@@ -1438,3 +1438,101 @@ footer {
 .testimonials-link:hover .testimonial-card {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
+
+.service-count {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 4rem 5%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-count::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/pattern.png') repeat;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.count-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.count-number {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.count-number .number {
+    background: linear-gradient(45deg, #fff, #f0f0f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.count-number .plus {
+    color: #ffc107;
+    font-size: 3rem;
+    margin-top: -1rem;
+}
+
+.count-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.count-text p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.count-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.1);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    margin-top: 2rem;
+    backdrop-filter: blur(5px);
+}
+
+.count-badge i {
+    color: #ffc107;
+    font-size: 1.2rem;
+}
+
+.count-badge span {
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .count-number {
+        font-size: 3.5rem;
+    }
+    
+    .count-number .plus {
+        font-size: 2.5rem;
+    }
+    
+    .count-text h2 {
+        font-size: 1.5rem;
+    }
+}
