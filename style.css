@@ -1308,3 +1308,53 @@ footer {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+.rating-summary {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.rating-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.rating-stars {
+    font-size: 2rem;
+    color: #ffc107;
+    margin-bottom: 1rem;
+}
+
+.rating-stars .rating-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
+    color: #333;
+}
+
+.rating-count {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.rating-sources {
+    margin-top: 1rem;
+}
+
+.verified-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.verified-badge i {
+    font-size: 1rem;
+}
