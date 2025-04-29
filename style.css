@@ -1384,3 +1384,19 @@ footer {
 .verified-badge i {
     font-size: 1rem;
 }
+
+.testimonials-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.testimonials-link:hover {
+    transform: translateY(-5px);
+}
+
+.testimonials-link:hover .testimonial-card {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
