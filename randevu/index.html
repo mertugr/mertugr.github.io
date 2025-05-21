@@ -23,7 +23,16 @@
                 <span></span>
             </div>
             <ul class="nav-links">
-                <li><a href="/hizmetler">Hizmetlerimiz</a></li>
+                <li class="dropdown">
+                    <a href="/hizmetler">Hizmetlerimiz <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/hizmetlerimiz/hali-yikama">Halı Yıkama</a></li>
+                        <li><a href="/hizmetlerimiz/perde-yikama">Perde Yıkama</a></li>
+                        <li><a href="/hizmetlerimiz/yorgan-yikama">Yorgan ve Battaniye Yıkama</a></li>
+                        <li><a href="/hizmetlerimiz/yatak-yikama">Yatak Yıkama</a></li>
+                        <li><a href="/hizmetlerimiz/koltuk-yikama">Koltuk Yıkama</a></li>
+                    </ul>
+                </li>
                 <li><a href="/fiyatlar">Fiyatlar</a></li>
                 <li><a href="/kampanyalar">Kampanyalar</a></li>
                 <li><a href="/hizmet-bolgeleri">Hizmet Bölgeleri</a></li>
@@ -79,8 +88,34 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="address">Adresiniz*</label>
-                <textarea name="address" id="address" required></textarea>
+                <label for="district">İlçe*</label>
+                <select name="district" id="district" required>
+                    <option value="">İlçe Seçiniz</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="neighborhood">Mahalle*</label>
+                <select name="neighborhood" id="neighborhood" required disabled>
+                    <option value="">Önce İlçe Seçiniz</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="street">Sokak*</label>
+                <select name="street" id="street" required disabled>
+                    <option value="">Önce Mahalle Seçiniz</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="building_no">Bina No*</label>
+                <input type="text" name="building_no" id="building_no" required>
+            </div>
+            <div class="form-group">
+                <label for="apartment_no">Daire No*</label>
+                <input type="text" name="apartment_no" id="apartment_no" required>
+            </div>
+            <div class="form-group">
+                <label for="address_notes">Adres Tarifi</label>
+                <textarea name="address_notes" id="address_notes" placeholder="Ek adres bilgisi, tarif vb."></textarea>
             </div>
             <div class="form-group">
                 <label for="notes">Notunuz</label>
@@ -139,9 +174,37 @@
         </div>
     </footer>
 
+    <script src="../../js/floating-buttons.js"></script>
+    <script src="../../js/istanbul-addresses.js"></script>
     <script>
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('nav-active');
+        // Menü toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('nav-active');
+        });
+
+        // Mobil görünümde dropdown menüleri için tıklama olayı
+        dropdowns.forEach(dropdown => {
+            const link = dropdown.querySelector('a');
+            link.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+
+        // Ekran boyutu değiştiğinde menüyü sıfırla
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('nav-active');
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
         });
 
         // Müsait günleri ayarla
@@ -166,7 +229,62 @@
                 dateSelect.appendChild(dateOption);
             }
         }
+
+        // İlçe seçimi için dropdown'ı doldur
+        const districtSelect = document.getElementById('district');
+        const neighborhoodSelect = document.getElementById('neighborhood');
+        const streetSelect = document.getElementById('street');
+
+        // İlçeleri ekle
+        Object.keys(istanbulAddresses).forEach(district => {
+            const option = document.createElement('option');
+            option.value = district;
+            option.textContent = district;
+            districtSelect.appendChild(option);
+        });
+
+        // İlçe seçildiğinde mahalleleri güncelle
+        districtSelect.addEventListener('change', function() {
+            // Mahalle dropdown'ını temizle ve varsayılan seçeneği ekle
+            neighborhoodSelect.innerHTML = '<option value="">Mahalle Seçiniz</option>';
+            streetSelect.innerHTML = '<option value="">Önce Mahalle Seçiniz</option>';
+            
+            if (this.value) {
+                neighborhoodSelect.disabled = false;
+                const neighborhoods = istanbulAddresses[this.value];
+                
+                Object.keys(neighborhoods).forEach(neighborhood => {
+                    const option = document.createElement('option');
+                    option.value = neighborhood;
+                    option.textContent = neighborhood;
+                    neighborhoodSelect.appendChild(option);
+                });
+            } else {
+                neighborhoodSelect.disabled = true;
+                streetSelect.disabled = true;
+            }
+        });
+
+        // Mahalle seçildiğinde sokakları güncelle
+        neighborhoodSelect.addEventListener('change', function() {
+            // Sokak dropdown'ını temizle ve varsayılan seçeneği ekle
+            streetSelect.innerHTML = '<option value="">Sokak Seçiniz</option>';
+            
+            if (this.value) {
+                streetSelect.disabled = false;
+                const district = districtSelect.value;
+                const streets = istanbulAddresses[district][this.value];
+                
+                streets.forEach(street => {
+                    const option = document.createElement('option');
+                    option.value = street;
+                    option.textContent = street;
+                    streetSelect.appendChild(option);
+                });
+            } else {
+                streetSelect.disabled = true;
+            }
+        });
     </script>
-    <script src="../../js/floating-buttons.js"></script>
 </body>
 </html> 
