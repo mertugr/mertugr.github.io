@@ -84,7 +84,16 @@
                 <span></span>
             </div>
             <ul class="nav-links">
-                <li><a href="/hizmetler">Hizmetlerimiz</a></li>
+                <li class="dropdown">
+                    <a href="/hizmetler">Hizmetlerimiz <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/hizmetlerimiz/hali-yikama">Halı Yıkama</a></li>
+                        <li><a href="/hizmetlerimiz/perde-yikama">Perde Yıkama</a></li>
+                        <li><a href="/hizmetlerimiz/yorgan-yikama">Yorgan ve Battaniye Yıkama</a></li>
+                        <li><a href="/hizmetlerimiz/yatak-yikama">Yatak Yıkama</a></li>
+                        <li><a href="/hizmetlerimiz/koltuk-yikama">Koltuk Yıkama</a></li>
+                    </ul>
+                </li>
                 <li><a href="/fiyatlar">Fiyatlar</a></li>
                 <li><a href="/kampanyalar">Kampanyalar</a></li>
                 <li><a href="/hizmet-bolgeleri">Hizmet Bölgeleri</a></li>
@@ -98,7 +107,7 @@
 
     <section id="anasayfa" class="hero">
         <div class="hero-content">
-            <h1>İstanbul'un En Güvenilir Halı Yıkama Servisi</h1>
+            <h1>Profesyonel Temizlik Çözümleri</h1>
             <p class="hero-subtitle">20 Yıllık Tecrübe ile Profesyonel Halı, Perde ve Koltuk Yıkama Hizmetleri</p>
             <p class="hero-subtitle">ÖZMER ile Eviniz Temiz, İçiniz Rahat Olsun.</p>
 
@@ -112,10 +121,6 @@
                     <a href="tel:+902123215462" class="phone-link">
                         <i class="fas fa-phone"></i>
                         <span>0212 321 54 62</span>
-                    </a>
-                    <a href="https://wa.me/905322418969" class="whatsapp-link">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>WhatsApp</span>
                     </a>
                 </div>
             </div>
@@ -369,9 +374,33 @@
     </div>
 
     <script>
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('nav-active');
+        const menuBtn = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+        });
+
+        // Mobil menüde dropdown'ları aç/kapa
+        dropdowns.forEach(dropdown => {
+            const link = dropdown.querySelector('a');
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+
+        // Sayfa yüklendiğinde ve yeniden boyutlandırıldığında mobil menüyü kontrol et
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('nav-active');
+                dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+            }
         });
     </script>
+    <script src="js/floating-buttons.js"></script>
 </body>
 </html>
