@@ -26,6 +26,7 @@
     --text-color: #2c3e50;       /* Dark gray - text color */
     --light-bg: #f5f7fa;         /* Light gray - background */
     --white: #ffffff;
+    --link-color: #0066cc;       /* Bright blue for better visibility */
 }
 
 /* Navigation Styles */
@@ -1901,4 +1902,16 @@ footer {
     .floating-button i {
         font-size: 20px;
     }
+}
+
+/* Add styles for inline text links */
+p a {
+    color: #0066cc;              /* Bright blue */
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+p a:hover {
+    color: #ff4081;              /* Bright pink on hover */
 }
