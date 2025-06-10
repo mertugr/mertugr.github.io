@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+Allow: /amp/
+Allow: /images/
+Allow: /js/
+Allow: /css/
+Allow: /hizmetlerimiz/
+Allow: /fiyatlar/
+Allow: /kampanyalar/
+Allow: /hizmet-bolgeleri/
+Allow: /yorumlar/
+Allow: /randevu/
+Allow: /hakkimizda/
+Allow: /iletisim/
+
+Disallow: /admin/
+Disallow: /temp/
+Disallow: /backup/
+Disallow: /*.php$
+Disallow: /*.sql$
+Disallow: /*.log$
+Disallow: /*.txt$
+Disallow: /cgi-bin/
+Disallow: /error_log
+Disallow: /error/
+Disallow: /tmp/
+
+# Sitemap
+Sitemap: https://www.ozmeryikama.com/sitemap.xml 
