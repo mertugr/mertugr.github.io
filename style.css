@@ -20,11 +20,11 @@
 
 /* Update Color Scheme */
 :root {
-    --primary-color: #1e3c72;    /* Koyu mavi */
-    --secondary-color: #2a5298;  /* Orta mavi */
-    --accent-color: #d500f9;     /* Mor - vurgu rengi */
-    --text-color: #2c3e50;       /* Koyu gri - metin rengi */
-    --light-bg: #f5f7fa;         /* Açık gri - arka plan */
+    --primary-color: #1e3c72;    /* Dark blue */
+    --secondary-color: #2a5298;  /* Medium blue */
+    --accent-color: #d500f9;     /* Purple - accent color */
+    --text-color: #2c3e50;       /* Dark gray - text color */
+    --light-bg: #f5f7fa;         /* Light gray - background */
     --white: #ffffff;
 }
 
@@ -368,39 +368,6 @@ nav {
     .reason-item {
         page-break-inside: avoid;
         break-inside: avoid;
-    }
-}
-
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --primary-color: #3366cc;
-        --secondary-color: #4d79ff;
-        --text-color: #e1e1e1;
-        --light-bg: #1a1a1a;
-        --white: #121212;
-    }
-
-    body {
-        background-color: var(--white);
-        color: var(--text-color);
-    }
-
-    .nav-links a {
-        color: var(--text-color);
-    }
-
-    .dropdown-menu {
-        background: var(--white);
-        border: 1px solid var(--text-color);
-    }
-
-    .service-box,
-    .feature-item,
-    .reason-item,
-    .testimonial-card {
-        background: var(--light-bg);
-        border: 1px solid var(--text-color);
     }
 }
 
