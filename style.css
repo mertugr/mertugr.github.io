@@ -1249,17 +1249,14 @@ footer {
 }
 
 .features-container {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    flex-wrap: wrap;
 }
 
 .feature-item {
-    flex: 1;
-    min-width: 250px;
     text-align: center;
     padding: 2rem;
 }
@@ -1278,6 +1275,17 @@ footer {
 .feature-item p {
     color: var(--text-color);
     line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .features-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .feature-item {
+        padding: 1rem;
+    }
 }
 
 /* Why Choose Us Section */
