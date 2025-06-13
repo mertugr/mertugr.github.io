@@ -2100,3 +2100,26 @@ p a {
 p a:hover {
     opacity: 0.8;
 }
+
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #f0f0f0;
+    text-decoration: underline;
+}
+
+.footer-nav .footer-section h4 a {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.footer-nav .footer-section h4 a:hover {
+    color: #f0f0f0;
+    text-decoration: underline;
+}
