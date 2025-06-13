@@ -723,9 +723,19 @@ footer {
 }
 
 .footer-section h4 {
-    color: white;
-    font-size: 1.2rem;
+    color: var(--primary-color);
     margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-section h4 a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.footer-section h4 a:hover {
+    opacity: 0.8;
 }
 
 .footer-section ul {
@@ -738,12 +748,22 @@ footer {
 }
 
 .footer-section ul li a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
+    transition: opacity 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .footer-section ul li a:hover {
-    text-decoration: underline;
+    opacity: 0.8;
+}
+
+.footer-section ul li a i {
+    color: var(--primary-color);
+    width: 20px;
+    text-align: center;
 }
 
 .social-button {
