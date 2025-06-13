@@ -748,22 +748,22 @@ footer {
 }
 
 .footer-section ul li a {
-    color: var(--text-color);
+    color: #fff;
     text-decoration: none;
-    transition: opacity 0.3s ease;
+    transition: color 0.3s ease;
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 8px;
 }
 
 .footer-section ul li a:hover {
-    opacity: 0.8;
+    color: #f0f0f0;
+    text-decoration: underline;
 }
 
 .footer-section ul li a i {
-    color: var(--primary-color);
-    width: 20px;
-    text-align: center;
+    color: #fff;
+    font-size: 16px;
 }
 
 .social-button {
