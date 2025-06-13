@@ -1722,41 +1722,52 @@ footer {
 }
 
 .service-cta {
+    text-align: center;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    padding: 3rem;
+    border-radius: 10px;
+    color: white;
+    margin-top: 4rem;
+}
+
+.service-cta .cta-buttons {
     display: flex;
     gap: 20px;
     justify-content: center;
     margin-top: 2rem;
 }
 
-.service-cta .btn {
+.service-cta .cta-button {
     padding: 12px 30px;
     font-size: 1.1rem;
     min-width: 180px;
-}
-
-.service-cta h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
-
-.service-cta p {
-    margin-bottom: 2rem;
-    opacity: 0.9;
-}
-
-.service-cta .cta-button {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    background: var(--accent-color);
-    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     text-decoration: none;
     border-radius: 5px;
-    font-weight: bold;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-.service-cta .cta-button:hover {
-    transform: translateY(-3px);
+.service-cta .cta-button.phone {
+    background-color: #fff;
+    color: var(--primary-color);
+}
+
+.service-cta .cta-button.phone:hover {
+    background-color: #f0f0f0;
+}
+
+.service-cta .cta-button:not(.phone) {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.service-cta .cta-button:not(.phone):hover {
+    background-color: #fff;
+    color: var(--primary-color);
 }
 
 @media (max-width: 768px) {
