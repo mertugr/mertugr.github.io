@@ -1312,18 +1312,28 @@ footer {
 }
 
 .reason-item {
-    text-align: center;
+    background: var(--primary-color);
+    color: var(--white);
     padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
     position: relative;
-    color: white;
-    min-height: 250px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    overflow: hidden;
+    text-align: center;
+    gap: 1rem;
+}
+
+.reason-item a {
+    color: var(--white);
+    text-decoration: underline;
+    transition: opacity 0.3s ease;
+}
+
+.reason-item a:hover {
+    opacity: 0.8;
 }
 
 .reason-item::before {
@@ -1405,9 +1415,10 @@ footer {
     transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
-    height: 280px; /* Slightly reduced height */
-    width: 100%; /* Full width of grid cell */
+    height: 280px;
+    width: 100%;
     margin: 0 auto;
+    color: var(--text-color);
 }
 
 .service-box i {
@@ -1443,7 +1454,7 @@ footer {
 
 .service-link {
     display: inline-block;
-    color: var(--text-color);
+    color: inherit;
     text-decoration: underline;
     font-weight: 500;
     transition: opacity 0.3s ease;
@@ -1928,7 +1939,68 @@ footer {
 
 /* Add styles for inline text links */
 p a {
+    color: inherit;
+    text-decoration: underline;
+    transition: opacity 0.3s ease;
+}
+
+p a:hover {
+    opacity: 0.8;
+}
+
+/* Update other link styles */
+.feature-item a,
+.about-features a,
+.service-description a,
+.contact-info a,
+.footer-section a {
+    color: inherit;
+    text-decoration: underline;
+    transition: opacity 0.3s ease;
+}
+
+.feature-item a:hover,
+.about-features a:hover,
+.service-description a:hover,
+.contact-info a:hover,
+.footer-section a:hover {
+    opacity: 0.8;
+}
+
+/* Update service box link styles */
+.service-box {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 280px;
+    width: 100%;
+    margin: 0 auto;
     color: var(--text-color);
+}
+
+.service-link {
+    display: inline-block;
+    color: inherit;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.service-link:hover {
+    opacity: 0.8;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Update general paragraph link styles */
+p a {
+    color: inherit;
     text-decoration: underline;
     transition: opacity 0.3s ease;
 }
