@@ -22,7 +22,7 @@
         }
         .error-code {
             font-size: 72px;
-            color: #2ecc71;
+            color: #d500f9;
             margin: 0;
             font-weight: 700;
         }
@@ -70,7 +70,7 @@
         }
         .service-card a:hover {
             background-color: #f8f9fa;
-            color: #2ecc71;
+            color: #d500f9;
         }
         @media (max-width: 768px) {
             .error-content {
@@ -88,17 +88,35 @@
 <body>
     <header>
         <nav>
-            <div class="container">
-                <a href="/" class="logo">ÖZMER Halı Yıkama</a>
-                <ul class="nav-links">
-                    <li><a href="/">Ana Sayfa</a></li>
-                    <li><a href="/hizmetlerimiz">Hizmetlerimiz</a></li>
-                    <li><a href="/fiyatlar">Fiyatlar</a></li>
-                    <li><a href="/kampanyalar">Kampanyalar</a></li>
-                    <li><a href="/randevu">Hizmet Al</a></li>
-                    <li><a href="/iletisim">İletişim</a></li>
-                </ul>
+            <div class="logo">
+                <a href="/">
+                    <img src="logo.png" alt="ÖZMER Halı Yıkama Logo">
+                </a>
             </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="/hizmetlerimiz">Hizmetlerimiz <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/hizmetlerimiz/hali-yikama">Halı Yıkama</a></li>
+                        <li><a href="/hizmetlerimiz/perde-yikama">Perde Yıkama</a></li>
+                        <li><a href="/hizmetlerimiz/yorgan-yikama">Yorgan ve Battaniye Yıkama</a></li>
+                        <li><a href="/hizmetlerimiz/yatak-yikama">Yatak Yıkama</a></li>
+                        <li><a href="/hizmetlerimiz/koltuk-yikama">Koltuk Yıkama</a></li>
+                    </ul>
+                </li>
+                <li><a href="/fiyatlar">Fiyatlar</a></li>
+                <li><a href="/kampanyalar">Kampanyalar</a></li>
+                <li><a href="/hizmet-bolgeleri">Hizmet Bölgeleri</a></li>
+                <li><a href="/yorumlar">Müşteri Yorumları</a></li>
+                <li><a href="/randevu">Hizmet Al</a></li>
+                <li><a href="/hakkimizda">Hakkımızda</a></li>
+                <li><a href="/iletisim">İletişim</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -118,40 +136,65 @@
                 </div>
                 <div class="service-card">
                     <h3>Perde Yıkama</h3>
-                    <a href="/hizmetlerimiz/perde-yikama">Perde Temizlik ve Bakım Hizmeti</a>
+                    <a href="/hizmetlerimiz/perde-yikama">Perde Temizlik Hizmeti</a>
                 </div>
                 <div class="service-card">
                     <h3>Koltuk Yıkama</h3>
-                    <a href="/hizmetlerimiz/koltuk-yikama">Koltuk Temizlik ve Bakım Hizmeti</a>
+                    <a href="/hizmetlerimiz/koltuk-yikama">Koltuk Temizlik Hizmeti</a>
                 </div>
                 <div class="service-card">
-                    <h3>Yerinde Hizmet</h3>
-                    <a href="/hizmetlerimiz/yerinde-koltuk-yikama">Yerinde Koltuk ve Halı Yıkama</a>
+                    <h3>Yatak Yıkama</h3>
+                    <a href="/hizmetlerimiz/yatak-yikama">Yatak Temizlik Hizmeti</a>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <div class="footer-content">
+        <div class="footer-content">
+            <div class="footer-nav">
                 <div class="footer-section">
-                    <h3>İletişim</h3>
-                    <p>Telefon: 0212 XXX XX XX</p>
-                    <p>E-posta: info@ozmeryikama.com</p>
+                    <h4><a href="/hizmetler">Hizmetlerimiz</a></h4>
+                    <ul>
+                        <li><a href="/hizmetlerimiz/hali-yikama">Halı Yıkama</a></li>
+                        <li><a href="/hizmetlerimiz/perde-yikama">Perde Yıkama</a></li>
+                        <li><a href="/hizmetlerimiz/yorgan-yikama">Yorgan ve Battaniye Yıkama</a></li>
+                        <li><a href="/hizmetlerimiz/yatak-yikama">Yatak Yıkama</a></li>
+                        <li><a href="/hizmetlerimiz/koltuk-yikama">Koltuk Yıkama</a></li>
+                    </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Hızlı Erişim</h3>
+                    <h4><a href="/hakkimizda">Kurumsal</a></h4>
                     <ul>
-                        <li><a href="/hizmetlerimiz">Hizmetlerimiz</a></li>
-                        <li><a href="/fiyatlar">Fiyatlar</a></li>
-                        <li><a href="/kampanyalar">Kampanyalar</a></li>
-                        <li><a href="/randevu">Hizmet Al</a></li>
+                        <li><a href="/hakkimizda">Hakkımızda</a></li>
+                        <li><a href="/hizmet-bolgeleri">Hizmet Bölgeleri</a></li>
+                        <li><a href="/yorumlar">Müşteri Yorumları</a></li>
+                        <li><a href="/iletisim">İletişim</a></li>
                     </ul>
+                </div>
+                <div class="footer-section">
+                    <h4><a href="/iletisim">İletişim</a></h4>
+                    <ul>
+                        <li><a href="tel:+902123215462"><i class="fas fa-phone"></i> (0212) 321 54 62</a></li>
+                        <li><a href="tel:+905322418969"><i class="fas fa-phone"></i> (0532) 241 89 69</a></li>
+                        <li><a href="https://maps.google.com/?q=41.0533774,28.9497584" target="_blank"><i class="fas fa-map-marker-alt"></i> Örnektepe Mah. Kanarya Sk. No:71 BEYOĞLU/İSTANBUL</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/ozmerhaliyikama" class="social-button" target="_blank" rel="noopener noreferrer">
+                            <img src="/instagram-logo.png" alt="Instagram">
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100069299958479" class="social-button" target="_blank" rel="noopener noreferrer">
+                            <img src="/facebook-logo.png" alt="Facebook">
+                        </a>
+                    </div>
+                    
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 ÖZMER Halı Yıkama. Tüm hakları saklıdır.</p>
+                <p>&copy; 2025 ÖZMER Halı Yıkama. Tüm hakları saklıdır.</p>
             </div>
         </div>
     </footer>
