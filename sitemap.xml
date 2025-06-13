@@ -1,41 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Ana Sayfalar -->
     <url>
         <loc>https://www.ozmeryikama.com/</loc>
         <lastmod>2024-03-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://www.ozmeryikama.com/hizmetlerimiz/hali-yikama/</loc>
         <lastmod>2024-03-20</lastmod>
-        <changefreq>monthly</changefreq>
+        <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.ozmeryikama.com/hizmetlerimiz/perde-yikama/</loc>
         <lastmod>2024-03-20</lastmod>
-        <changefreq>monthly</changefreq>
+        <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.ozmeryikama.com/hizmetlerimiz/yorgan-yikama/</loc>
         <lastmod>2024-03-20</lastmod>
-        <changefreq>monthly</changefreq>
+        <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.ozmeryikama.com/hizmetlerimiz/yatak-yikama/</loc>
         <lastmod>2024-03-20</lastmod>
-        <changefreq>monthly</changefreq>
+        <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.ozmeryikama.com/hizmetlerimiz/koltuk-yikama/</loc>
         <lastmod>2024-03-20</lastmod>
-        <changefreq>monthly</changefreq>
+        <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
+
+    <!-- İlçe Sayfaları -->
+    <url>
+        <loc>https://www.ozmeryikama.com/hizmetlerimiz/hali-yikama/bayrampasa/</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.ozmeryikama.com/hizmetlerimiz/hali-yikama/besiktas/</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.ozmeryikama.com/hizmetlerimiz/hali-yikama/beyoglu/</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.ozmeryikama.com/hizmetlerimiz/hali-yikama/eyupsultan/</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.ozmeryikama.com/hizmetlerimiz/hali-yikama/fatih/</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.ozmeryikama.com/hizmetlerimiz/hali-yikama/gaziosmanpasa/</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.ozmeryikama.com/hizmetlerimiz/hali-yikama/kagithane/</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.ozmeryikama.com/hizmetlerimiz/hali-yikama/sisli/</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.ozmeryikama.com/hizmetlerimiz/hali-yikama/sultangazi/</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Blog Sayfaları -->
+    <url>
+        <loc>https://www.ozmeryikama.com/blog/hali-bakimi/</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.ozmeryikama.com/blog/hali-leke-cikarma/</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.ozmeryikama.com/blog/perde-leke-cikarma/</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Diğer Sayfalar -->
     <url>
         <loc>https://www.ozmeryikama.com/fiyatlar/</loc>
         <lastmod>2024-03-20</lastmod>
@@ -51,8 +130,8 @@
     <url>
         <loc>https://www.ozmeryikama.com/hizmet-bolgeleri/</loc>
         <lastmod>2024-03-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.ozmeryikama.com/yorumlar/</loc>
@@ -63,8 +142,8 @@
     <url>
         <loc>https://www.ozmeryikama.com/randevu/</loc>
         <lastmod>2024-03-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.ozmeryikama.com/hakkimizda/</loc>
@@ -76,6 +155,6 @@
         <loc>https://www.ozmeryikama.com/iletisim/</loc>
         <lastmod>2024-03-20</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
     </url>
 </urlset> 

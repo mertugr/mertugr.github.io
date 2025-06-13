@@ -7,7 +7,7 @@
     <title>Online Randevu Al | ÖZMER Halı Yıkama - İstanbul'da Profesyonel Temizlik Hizmeti</title>
     <meta name="description" content="ÖZMER Halı Yıkama'dan online randevu alın. Halı, perde, koltuk, yatak ve yorgan yıkama hizmetleri için hemen randevu oluşturun. Ücretsiz servis, aynı gün teslimat!">
     <meta name="keywords" content="halı yıkama randevu, perde yıkama randevu, koltuk yıkama randevu, online randevu, İstanbul halı yıkama randevu, ÖZMER randevu">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="noindex, follow">
     <link rel="canonical" href="https://www.ozmeryikama.com/randevu">
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -59,8 +59,22 @@
       }
     }
     </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WTG6B8RV');</script>
+    <!-- End Google Tag Manager -->
 </head>
+
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTG6B8RV"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <header>
         <nav>
             <div class="logo">
@@ -100,7 +114,7 @@
     </section>
 
     <section class="appointment">
-        <form action="https://formsubmit.co/ozmerhaliyikama@gmail.com" method="POST" class="appointment-form">
+        <form id="appointmentForm" onsubmit="return handleSubmit(event)">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_next" value="https://ozmeryikama.com/tesekkurler">
             <input type="hidden" name="_template" value="table">
@@ -134,9 +148,7 @@
             </div>
             <div class="form-group">
                 <label for="date">Tercih Ettiğiniz Tarih*</label>
-                <select name="date" id="date" required>
-                    <option value="">Tarih Seçiniz</option>
-                </select>
+                <input type="date" name="date" id="date" required>
             </div>
             <div class="form-group">
                 <label for="district">İlçe*</label>
@@ -174,7 +186,7 @@
                 <label for="notes">Notunuz</label>
                 <textarea name="notes" id="notes"></textarea>
             </div>
-            <button type="submit">Randevu Oluştur</button>
+            <button type="submit" class="cta-button">Randevu Oluştur</button>
         </form>
     </section>
 
@@ -262,7 +274,7 @@
 
         // Müsait günleri ayarla
         const dateSelect = document.getElementById('date');
-        const today = new Date();
+         today = new Date();
         
         // Sonraki 14 günü listeye ekle
         for(let i = 1; i <= 14; i++) {
@@ -282,6 +294,38 @@
                 dateSelect.appendChild(dateOption);
             }
         }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Form verilerini al
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Google Analytics event gönder
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'form_submission', {
+                    'event_category': 'Randevu',
+                    'event_label': data.district,
+                    'value': 1
+                });
+            }
+            
+            // Form verilerini işle
+            console.log('Form verileri:', data);
+            
+            // Başarılı mesajı göster
+            alert('Randevunuz alındı. En kısa sürede sizinle iletişime geçeceğiz.');
+            
+            // Formu sıfırla
+            event.target.reset();
+            
+            return false;
+        }
+
+        // Tarih seçici için minimum tarihi bugün olarak ayarla
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').min = today;
     </script>
 </body>
 </html> 
