@@ -391,18 +391,20 @@
     </div>
 
     <script>
-        const menuBtn = document.querySelector('.menu-toggle');
+        // Menü toggle
+        const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
         const dropdowns = document.querySelectorAll('.dropdown');
 
-        menuBtn.addEventListener('click', () => {
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
             navLinks.classList.toggle('nav-active');
         });
 
-        // Mobil menüde dropdown'ları aç/kapa
+        // Mobil görünümde dropdown menüleri için tıklama olayı
         dropdowns.forEach(dropdown => {
             const link = dropdown.querySelector('a');
-            link.addEventListener('click', (e) => {
+            link.addEventListener('click', function(e) {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
                     dropdown.classList.toggle('active');
@@ -410,11 +412,14 @@
             });
         });
 
-        // Sayfa yüklendiğinde ve yeniden boyutlandırıldığında mobil menüyü kontrol et
-        window.addEventListener('resize', () => {
+        // Ekran boyutu değiştiğinde menüyü sıfırla
+        window.addEventListener('resize', function() {
             if (window.innerWidth > 768) {
+                menuToggle.classList.remove('active');
                 navLinks.classList.remove('nav-active');
-                dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
             }
         });
     </script>
