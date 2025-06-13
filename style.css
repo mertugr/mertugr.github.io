@@ -95,6 +95,15 @@ nav {
     color: var(--primary-color);
 }
 
+/* Randevu Al link style */
+.nav-links li:has(a[href="/randevu"]) a {
+    color: #d500f9;
+}
+
+.nav-links li:has(a[href="/randevu"]) a:hover {
+    color: #b300d4;
+}
+
 /* Dropdown Menu Styles */
 .dropdown {
     position: relative;
