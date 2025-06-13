@@ -2135,12 +2135,12 @@ p a:hover {
 
 /* Blog Styles */
 .blog-content {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
     display: grid;
     grid-template-columns: 250px 1fr;
     gap: 2rem;
+    padding: 0 5%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .blog-categories {
@@ -2149,12 +2149,13 @@ p a:hover {
     border-radius: 8px;
     position: sticky;
     top: 100px;
+    height: fit-content;
 }
 
 .blog-categories h2 {
-    color: var(--text-color);
+    color: var(--primary-color);
     margin-bottom: 1rem;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .blog-categories ul {
@@ -2176,7 +2177,8 @@ p a:hover {
 
 .blog-categories a:hover {
     background: var(--white);
-    color: var(--accent-color);
+    color: var(--primary-color);
+    padding-left: 1rem;
 }
 
 .blog-posts {
@@ -2188,7 +2190,7 @@ p a:hover {
     background: var(--white);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
 }
 
@@ -2207,7 +2209,7 @@ p a:hover {
 }
 
 .post-content h2 {
-    color: var(--text-color);
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
 }
@@ -2220,20 +2222,20 @@ p a:hover {
 
 .post-content p {
     color: var(--text-color);
-    margin-bottom: 1rem;
     line-height: 1.6;
+    margin-bottom: 1rem;
 }
 
 .read-more {
     display: inline-block;
-    color: var(--accent-color);
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .read-more:hover {
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 @media (max-width: 768px) {
@@ -2319,5 +2321,173 @@ p a:hover {
 @media (max-width: 480px) {
     .related-posts-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* İlçe Sayfası Stilleri */
+.service-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    padding: 0 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.service-info {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.service-info h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.service-info h3 {
+    color: var(--secondary-color);
+    margin: 1.5rem 0 1rem;
+    font-size: 1.5rem;
+}
+
+.service-info p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.service-info ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.service-info li {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.service-info li:before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+.cta-box {
+    background: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.cta-box h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background: var(--secondary-color);
+}
+
+.service-areas {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.service-areas h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.service-areas ul {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.service-areas li {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.service-areas li:before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+.district-links {
+    display: grid;
+    gap: 1rem;
+}
+
+.district-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.district-links a:hover {
+    background: var(--light-bg);
+    color: var(--primary-color);
+    padding-left: 1rem;
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .blog-content,
+    .service-content {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .blog-categories {
+        position: static;
+        margin-bottom: 2rem;
+    }
+
+    .page-header {
+        padding: 2rem 1rem;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .service-info,
+    .service-areas {
+        padding: 1.5rem;
+    }
+
+    .service-info h2 {
+        font-size: 1.8rem;
+    }
+
+    .service-info h3 {
+        font-size: 1.3rem;
     }
 }
