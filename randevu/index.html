@@ -164,8 +164,10 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="date">Tercih Ettiğiniz Tarih*</label>
-                <input type="date" name="date" id="date" required>
+                <label for="date">Tercih Ettiğiniz Tarih:</label>
+                <select name="date" id="date" required>
+                    <option value="">Tarih Seçiniz</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="district">İlçe*</label>
@@ -289,60 +291,68 @@
             }
         });
 
-        // Müsait günleri ayarla
-        const dateSelect = document.getElementById('date');
-         today = new Date();
-        
-        // Sonraki 14 günü listeye ekle
-        for(let i = 1; i <= 14; i++) {
-            const date = new Date(today);
-            date.setDate(today.getDate() + i);
+        // Tarih seçeneklerini oluştur
+        function createDateOptions() {
+            const dateSelect = document.getElementById('date');
+            const today = new Date();
             
-            // Pazar günlerini hariç tut
-            if(date.getDay() !== 0) {
-                const dateStr = date.toISOString().split('T')[0];
-                const dateOption = document.createElement('option');
-                dateOption.value = dateStr;
+            // Bugünü hariç tut, yarından başla
+            const startDate = new Date(today);
+            startDate.setDate(today.getDate() + 1);
+            
+            // 30 günlük seçenek oluştur
+            for (let i = 0; i < 30; i++) {
+                const date = new Date(startDate);
+                date.setDate(startDate.getDate() + i);
                 
-                // Türkçe tarih formatı
-                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                dateOption.textContent = date.toLocaleDateString('tr-TR', options);
+                // Tarihi formatla (gün/ay/yıl)
+                const day = date.getDate().toString().padStart(2, '0');
+                const month = (date.getMonth() + 1).toString().padStart(2, '0');
+                const year = date.getFullYear();
                 
-                dateSelect.appendChild(dateOption);
+                // Gün adını al
+                const dayNames = ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'];
+                const dayName = dayNames[date.getDay()];
+                
+                // Option elementi oluştur
+                const option = document.createElement('option');
+                option.value = `${day}/${month}/${year}`;
+                option.textContent = `${day}/${month}/${year} ${dayName}`;
+                dateSelect.appendChild(option);
             }
         }
 
-        function handleSubmit(event) {
-            event.preventDefault();
+        // Sayfa yüklendiğinde tarih seçeneklerini oluştur
+        document.addEventListener('DOMContentLoaded', createDateOptions);
+
+        // Form gönderildiğinde
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
             
             // Form verilerini al
-            const formData = new FormData(event.target);
-            const data = Object.fromEntries(formData.entries());
+            const formData = new FormData(this);
             
-            // Google Analytics event gönder
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'form_submission', {
-                    'event_category': 'Randevu',
-                    'event_label': data.district,
-                    'value': 1
-                });
-            }
-            
-            // Form verilerini işle
-            console.log('Form verileri:', data);
-            
-            // Başarılı mesajı göster
-            alert('Hizmet talebiniz alındı. En kısa sürede sizinle iletişime geçeceğiz.');
-            
-            // Formu sıfırla
-            event.target.reset();
-            
-            return false;
-        }
-
-        // Tarih seçici için minimum tarihi bugün olarak ayarla
-        const today = new Date().toISOString().split('T')[0];
-        document.getElementById('date').min = today;
+            // FormSubmit.co'ya gönder
+            fetch('https://formsubmit.co/ozmeryikama@gmail.com', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Başarılı mesajı göster
+                    alert('Hizmet talebiniz alındı. En kısa sürede sizinle iletişime geçeceğiz.');
+                    
+                    // Formu sıfırla
+                    this.reset();
+                } else {
+                    throw new Error('Form gönderilemedi');
+                }
+            })
+            .catch(error => {
+                console.error('Hata:', error);
+                alert('Bir hata oluştu. Lütfen daha sonra tekrar deneyin.');
+            });
+        });
     </script>
 </body>
 </html> 
