@@ -1388,12 +1388,12 @@ footer {
 }
 
 .services-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem 5%;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 15px;
 }
 
 .service-box {
@@ -1405,11 +1405,10 @@ footer {
     transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
-    height: 100%;
-}
-
-.service-box:hover {
-    transform: translateY(-5px);
+    height: 300px; /* Fixed height for all boxes */
+    min-width: 280px; /* Minimum width */
+    max-width: 350px; /* Maximum width */
+    margin: 0 auto; /* Center boxes in their grid cells */
 }
 
 .service-box i {
@@ -1422,18 +1421,25 @@ footer {
     color: var(--text-color);
     margin-bottom: 1rem;
     font-size: 1.25rem;
+    min-height: 2.5rem; /* Fixed height for titles */
 }
 
 .service-box p {
     color: var(--text-color);
     margin-bottom: 1.5rem;
     flex-grow: 1;
+    min-height: 3rem; /* Minimum height for description */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Maximum 3 lines of text */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .service-box-footer {
     margin-top: auto;
     padding-top: 1rem;
     border-top: 1px solid #eee;
+    min-height: 3rem; /* Fixed height for footer */
 }
 
 .service-link {
