@@ -1740,23 +1740,14 @@ footer {
 }
 
 .service-cta {
-    width: 100%;
-    max-width: none;
-    border-radius: 0;
     margin: 4rem 0;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-}
-
-.service-cta-inner {
     max-width: 800px;
     width: 100%;
-    padding: 3rem;
+    text-align: center;
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    padding: 3rem;
     border-radius: 10px;
     color: white;
-    text-align: center;
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
