@@ -1743,8 +1743,11 @@ footer {
     color: white;
     margin: 4rem auto;
     max-width: 800px;
-    width: 100%;
+    width: 90%;
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .service-cta h3 {
