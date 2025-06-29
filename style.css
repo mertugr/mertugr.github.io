@@ -1266,13 +1266,15 @@ footer {
     color: var(--text-color);
     border-bottom: 1px solid rgba(0,0,0,0.1);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     font-size: 1.1rem;
     transition: all 0.3s ease;
+    position: relative;
+    padding-left: 2rem;
 }
 
 .area-box ul li:hover {
-    padding-left: 10px;
+    padding-left: 2.5rem;
     color: var(--primary-color);
 }
 
@@ -1283,9 +1285,12 @@ footer {
 .area-box ul li::before {
     content: "✓";
     color: var(--accent-color);
-    margin-right: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: 1rem;
     font-weight: bold;
     font-size: 1.2rem;
+    line-height: 1;
 }
 
 .area-box .area-description {
@@ -1736,7 +1741,10 @@ footer {
     padding: 3rem;
     border-radius: 10px;
     color: white;
-    margin-top: 4rem;
+    margin: 4rem auto;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
 .service-cta h3 {
@@ -1749,6 +1757,13 @@ footer {
     opacity: 0.9;
 }
 
+.service-cta .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
 .service-cta .cta-button {
     display: inline-block;
     padding: 1rem 2.5rem;
@@ -1757,11 +1772,22 @@ footer {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 150px;
+    text-align: center;
 }
 
 .service-cta .cta-button:hover {
     transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.service-cta .cta-button.phone {
+    background: #25d366;
+}
+
+.service-cta .cta-button.phone:hover {
+    background: #128c7e;
 }
 
 @media (max-width: 768px) {
@@ -1770,11 +1796,23 @@ footer {
     }
     
     .service-cta {
-        padding: 2rem;
+        padding: 2rem 1.5rem;
+        margin: 3rem 1rem;
     }
     
     .service-cta h3 {
         font-size: 1.5rem;
+    }
+    
+    .service-cta .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .service-cta .cta-button {
+        width: 100%;
+        max-width: 250px;
     }
 }
 

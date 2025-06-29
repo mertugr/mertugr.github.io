@@ -120,9 +120,8 @@
 
         <div class="contact-form-section">
             <h2>Bize Mesaj Gönderin</h2>
-            <form action="https://formsubmit.co/ozmerhaliyikama@gmail.com" method="POST" class="contact-form">
+            <form id="contactForm" class="contact-form">
                 <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://ozmeryikama.com/tesekkurler">
                 <input type="hidden" name="_template" value="table">
                 <input type="hidden" name="_subject" value="Yeni İletişim Formu Mesajı">
                 <input type="hidden" name="_autoresponse" value="Mesajınız alınmıştır. En kısa sürede sizinle iletişime geçeceğiz.">
@@ -216,6 +215,32 @@
     <script>
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             document.querySelector('.nav-links').classList.toggle('nav-active');
+        });
+
+        // Contact form gönderildiğinde
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Form verilerini al
+            const formData = new FormData(this);
+            
+            // FormSubmit.co'ya gönder
+            fetch('https://formsubmit.co/ozmerhaliyikama@gmail.com', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Başarılı olduğunda teşekkürler sayfasına yönlendir
+                    window.location.href = '/tesekkurler';
+                } else {
+                    throw new Error('Form gönderilemedi');
+                }
+            })
+            .catch(error => {
+                console.error('Hata:', error);
+                alert('Bir hata oluştu. Lütfen daha sonra tekrar deneyin.');
+            });
         });
     </script>
     <script src="../../js/floating-buttons.js"></script>

@@ -339,11 +339,8 @@
             })
             .then(response => {
                 if (response.ok) {
-                    // Başarılı mesajı göster
-                    alert('Hizmet talebiniz alındı. En kısa sürede sizinle iletişime geçeceğiz.');
-                    
-                    // Formu sıfırla
-                    this.reset();
+                    // Başarılı olduğunda teşekkürler sayfasına yönlendir
+                    window.location.href = '/tesekkurler';
                 } else {
                     throw new Error('Form gönderilemedi');
                 }
