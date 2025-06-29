@@ -1684,6 +1684,9 @@ footer {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .service-description {
@@ -1737,14 +1740,23 @@ footer {
 }
 
 .service-cta {
-    text-align: center;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    width: 100%;
+    max-width: none;
+    border-radius: 0;
+    margin: 4rem 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+.service-cta-inner {
+    max-width: 800px;
+    width: 100%;
     padding: 3rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     border-radius: 10px;
     color: white;
-    margin: 4rem auto;
-    max-width: 800px;
-    width: 90%;
+    text-align: center;
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
