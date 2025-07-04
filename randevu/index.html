@@ -131,7 +131,7 @@
     </section>
 
     <section class="appointment">
-        <form id="appointmentForm" onsubmit="return handleSubmit(event)">
+        <form action="https://formsubmit.co/ozmerhaliyikama@gmail.com" method="POST" id="appointmentForm">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_next" value="https://ozmeryikama.com/tesekkurler">
             <input type="hidden" name="_template" value="table">
@@ -328,10 +328,8 @@
         // Form gönderildiğinde
         document.getElementById('appointmentForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
             // Form verilerini al
             const formData = new FormData(this);
-            
             // FormSubmit.co'ya gönder
             fetch('https://formsubmit.co/ozmeryikama@gmail.com', {
                 method: 'POST',

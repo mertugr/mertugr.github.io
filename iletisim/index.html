@@ -120,13 +120,14 @@
 
         <div class="contact-form-section">
             <h2>Bize Mesaj Gönderin</h2>
-            <form id="contactForm" class="contact-form">
+            <form action="https://formsubmit.co/ozmerhaliyikama@gmail.com" method="POST" id="contactForm" class="contact-form">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_template" value="table">
                 <input type="hidden" name="_subject" value="Yeni İletişim Formu Mesajı">
                 <input type="hidden" name="_autoresponse" value="Mesajınız alınmıştır. En kısa sürede sizinle iletişime geçeceğiz.">
                 <input type="hidden" name="_blacklist" value="spammy term, bad term">
                 <input type="hidden" name="_honey" value="">
+                <input type="hidden" name="_next" value="https://ozmeryikama.com/tesekkurler">
                 <div class="form-group">
                     <label for="name">Adınız Soyadınız*</label>
                     <input type="text" name="name" id="name" required>
@@ -220,10 +221,8 @@
         // Contact form gönderildiğinde
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
             // Form verilerini al
             const formData = new FormData(this);
-            
             // FormSubmit.co'ya gönder
             fetch('https://formsubmit.co/ozmerhaliyikama@gmail.com', {
                 method: 'POST',
