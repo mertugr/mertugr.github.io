@@ -143,6 +143,23 @@
         }
     }
     </script>
+    <!-- Event snippet for call conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-597332000/ixMiCKiF2-kaEKCg6pwC',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+    
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MY78XGPL4"></script>
@@ -206,10 +223,12 @@
                 <br>
                 <br>
                 <div class="hero-phone">
-                    <a href="tel:+902123215462" class="phone-link">
-                        <i class="fas fa-phone"></i>
-                        <span>0212 321 54 62</span>
-                    </a>
+                    <a href="tel:+902123215462" 
+                    class="phone-link"
+                    onclick="return gtag_report_conversion('tel:+902123215462');">
+                     <i class="fas fa-phone"></i>
+                     <span>0212 321 54 62</span>
+                 </a>
                 </div>
             </div>
         </div>
@@ -383,10 +402,12 @@
             <h2>Profesyonel Temizlik İçin Bizi Tercih Edin</h2>
             <p>Halı, perde, koltuk ve yatak temizliği için <a href="/kampanyalar">güncel kampanyalarımızı</a> inceleyin.</p>
             <div class="contact-buttons">
-                <a href="tel:+902123215462" class="phone-button">
-                    <i class="fas fa-phone"></i>
-                    Hemen Arayın
-                </a>
+                <a href="tel:+902123215462" 
+                class="phone-button" 
+                onclick="return gtag_report_conversion('tel:+902123215462');">
+                 <i class="fas fa-phone"></i>
+                 Hemen Arayın
+             </a>
                 <a href="https://wa.me/905322418969" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-whatsapp"></i>
                     WhatsApp
