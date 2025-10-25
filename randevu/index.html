@@ -74,6 +74,98 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-WTG6B8RV');</script>
     <!-- End Google Tag Manager -->
+
+<style>
+  gmpx-split-layout:not(:defined), gmp-map:not(:defined) { visibility: hidden; }
+</style>
+
+<script type="module">
+  "use strict";
+  import { APILoader } from 'https://ajax.googleapis.com/ajax/libs/@googlemaps/extended-component-library/0.6.11/index.min.js';
+
+  const CONFIGURATION = {
+    ctaTitle: "Tamam",
+    mapOptions: { center: { lat: 41.0082, lng: 28.9784 }, fullscreenControl: true, mapTypeControl: false, streetViewControl: true, zoom: 12, zoomControl: true, maxZoom: 22, mapId: "" },
+    mapsApiKey: "AIzaSyC6nqL4rLXNP83CJZPAh-B118R-dit7FQM",
+    capabilities: { addressAutocompleteControl: true, mapDisplayControl: true, ctaControl: true }
+  };
+
+  const SHORT_NAME_ADDRESS_COMPONENT_TYPES = new Set(['street_number', 'administrative_area_level_1', 'postal_code']);
+  const ADDRESS_COMPONENT_TYPES_IN_FORM = ['location','locality','administrative_area_level_1','postal_code','country'];
+
+  function getFormInputElement(componentType) {
+    return document.getElementById(`${componentType}-input`);
+  }
+
+  function fillInAddress(place) {
+    function getComponentName(componentType) {
+      for (const component of place.address_components || []) {
+        if (component.types[0] === componentType) {
+          return SHORT_NAME_ADDRESS_COMPONENT_TYPES.has(componentType) ? component.short_name : component.long_name;
+        }
+      }
+      return '';
+    }
+    function getComponentText(componentType) {
+      return (componentType === 'location') ? `${getComponentName('route')} ${getComponentName('street_number')}`.trim() : getComponentName(componentType);
+    }
+    for (const componentType of ADDRESS_COMPONENT_TYPES_IN_FORM) {
+      const el = getFormInputElement(componentType);
+      if (el) el.value = getComponentText(componentType);
+    }
+  }
+
+  function renderAddress(place) {
+    const mapEl = document.querySelector('gmp-map');
+    const markerEl = document.querySelector('gmp-advanced-marker');
+    if (place.geometry && place.geometry.location) {
+      mapEl.center = place.geometry.location;
+      markerEl.position = place.geometry.location;
+      const latEl = document.getElementById('lat-input');
+      const lngEl = document.getElementById('lng-input');
+      if (latEl && lngEl) {
+        latEl.value = place.geometry.location.lat();
+        lngEl.value = place.geometry.location.lng();
+      }
+    } else {
+      const markerEl = document.querySelector('gmp-advanced-marker');
+      if (markerEl) markerEl.position = null;
+    }
+  }
+
+  async function initAddressAutocomplete() {
+    const { Autocomplete } = await APILoader.importLibrary('places');
+    const mapOptions = CONFIGURATION.mapOptions;
+    mapOptions.mapId = mapOptions.mapId || 'DEMO_MAP_ID';
+    mapOptions.center = mapOptions.center || { lat: 41.0082, lng: 28.9784 };
+    await customElements.whenDefined('gmp-map');
+    const gmpMap = document.querySelector('gmp-map');
+    if (gmpMap && gmpMap.innerMap) {
+      gmpMap.innerMap.setOptions(mapOptions);
+    }
+    const autocomplete = new Autocomplete(getFormInputElement('location'), {
+      fields: ['address_components', 'geometry', 'name'],
+      types: ['address'],
+    });
+    autocomplete.addListener('place_changed', () => {
+      const place = autocomplete.getPlace();
+      if (!place.geometry) {
+        window.alert(`Adres için detay bulunamadı: '${place.name}'`);
+        return;
+      }
+      renderAddress(place);
+      fillInAddress(place);
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    // Initialize after page loads
+    initAddressAutocomplete();
+  });
+</script>
+
+<!-- Google Maps API Loader for Extended Components -->
+<gmpx-api-loader key="AIzaSyC6nqL4rLXNP83CJZPAh-B118R-dit7FQM" solution-channel="GMP_QB_addressselection_v4_cABC"></gmpx-api-loader>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MY78XGPL4"></script>
@@ -186,9 +278,21 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="address">Adres*</label>
-                <textarea name="address" id="address" required placeholder="Lütfen açık adresinizi yazınız"></textarea>
-            </div>
+  <label for="location-input">Adres*</label>
+  <input type="text" id="location-input" name="address" required placeholder="Adresinizi yazın (Google önerileri)">
+  <input type="text" id="apartment-input" name="apartment" placeholder="Daire/Blok (opsiyonel)">
+  <input type="hidden" id="locality-input" name="city">
+  <input type="hidden" id="administrative_area_level_1-input" name="district_or_state">
+  <input type="hidden" id="postal_code-input" name="postal_code">
+  <input type="hidden" id="country-input" name="country">
+  <input type="hidden" id="lat-input" name="lat">
+  <input type="hidden" id="lng-input" name="lng">
+  <div style="height: 260px; margin-top: 10px; border-radius: 8px; overflow: hidden;">
+    <gmp-map style="width: 100%; height: 100%;" zoom="14">
+      <gmp-advanced-marker></gmp-advanced-marker>
+    </gmp-map>
+  </div>
+</div>
             <div class="form-group">
                 <label for="building_no">Bina No*</label>
                 <input type="text" name="building_no" id="building_no" required>
@@ -314,40 +418,4 @@
                 const dayNames = ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'];
                 const dayName = dayNames[date.getDay()];
                 
-                // Option elementi oluştur
-                const option = document.createElement('option');
-                option.value = `${day}/${month}/${year}`;
-                option.textContent = `${day}/${month}/${year} ${dayName}`;
-                dateSelect.appendChild(option);
-            }
-        }
-
-        // Sayfa yüklendiğinde tarih seçeneklerini oluştur
-        document.addEventListener('DOMContentLoaded', createDateOptions);
-
-        // Form gönderildiğinde
-        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Form verilerini al
-            const formData = new FormData(this);
-            // FormSubmit.co'ya gönder
-            fetch('https://formsubmit.co/ozmeryikama@gmail.com', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                if (response.ok) {
-                    // Başarılı olduğunda teşekkürler sayfasına yönlendir
-                    window.location.href = '/tesekkurler';
-                } else {
-                    throw new Error('Form gönderilemedi');
-                }
-            })
-            .catch(error => {
-                console.error('Hata:', error);
-                alert('Bir hata oluştu. Lütfen daha sonra tekrar deneyin.');
-            });
-        });
-    </script>
-</body>
-</html> 
+                // Option
