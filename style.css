@@ -1521,7 +1521,7 @@ footer {
     transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
-    height: 280px;
+    height: 320px;
     width: 100%;
     margin: 0 auto;
     color: var(--text-color);
@@ -1555,7 +1555,7 @@ footer {
     margin-top: auto;
     padding-top: 1rem;
     border-top: 1px solid #eee;
-    min-height: 3rem; /* Fixed height for footer */
+    min-height: 4rem; /* Fixed height for footer */
 }
 
 .service-link {
@@ -2541,7 +2541,7 @@ p a:hover {
 
 .service-cta-wrapper {
     width: 100vw;
-    position: relative;
+    position: center;
     left: 50%;
     right: 50%;
     margin-left: -50vw;
