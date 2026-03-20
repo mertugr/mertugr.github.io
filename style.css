@@ -5,19 +5,6 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Logo Styles */
-.logo {
-    display: flex;
-    align-items: center;
-    max-width: 200px;
-}
-
-.logo img {
-    max-height: 50px;
-    width: auto;
-    object-fit: contain;
-}
-
 /* Update Color Scheme */
 :root {
     --primary-color: #1e3c72;    /* Dark blue */
